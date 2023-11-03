@@ -90,13 +90,6 @@ def func(message):
     keyboard = types.InlineKeyboardMarkup()
     button_list = [types.InlineKeyboardButton(text=x, callback_data=x) for x in range(1,21)]
     keyboard.add(*button_list)
-    # keyboard = types.InlineKeyboardMarkup()
-    # button1 = types.InlineKeyboardButton("1", callback_data = "1")
-    # button2 = types.InlineKeyboardButton("2", callback_data = "2")
-    # button3 = types.InlineKeyboardButton("3", callback_data = "3")
-    # button4 = types.InlineKeyboardButton("4", callback_data = "4")
-    # keyboard.add(button1,button2,button3,button4)  
-    
     bot.send_message(message.chat.id, f'{news_text}')
     bot.send_message(message.chat.id, "Выберите новость", reply_markup = keyboard)
 
